@@ -1,17 +1,70 @@
 ---
-
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="SoundCode Studio">
+
+  <section class="hero">
+
+    <h1 class="hero-title">
+      SOUNDCODE ESTUDIO DE JON VILLOTA
+    </h1>
+
+    <p class="hero-subtitle">
+      Plataforma interactiva de música generativa desarrollada con Astro y Strudel.
+      Explora algunos patrones musicales mediante programación y experimenta con ritmo,
+      melodía y armonía en tiempo real.
+    </p>
+
+  </section>
+
+  <section class="grid">
+
+    <div class="card">
+
+      <h2>Ritmo</h2>
+
+      <p>
+        Aprende cómo funcionan los ciclos y patrones rítmicos
+        dentro de la música generativa.
+      </p>
+
+      <a href="/ritmo" class="button">
+        Explorar sección
+      </a>
+
+    </div>
+
+    <div class="card">
+
+      <h2>Melodía</h2>
+
+      <p>
+        Descubre secuencias musicales creadas mediante código
+        usando notas y escalas.
+      </p>
+
+      <a href="/melodia" class="button">
+        Explorar sección
+      </a>
+
+    </div>
+
+    <div class="card">
+
+      <h2>Armonía</h2>
+
+      <p>
+        Experimenta con acordes y sonidos simultáneos
+        usando estructuras musicales programables.
+      </p>
+
+      <a href="/armonia" class="button">
+        Explorar sección
+      </a>
+
+    </div>
+
+  </section>
+
+</Layout>

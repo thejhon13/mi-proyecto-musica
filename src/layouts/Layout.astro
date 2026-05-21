@@ -1,0 +1,236 @@
+---
+const { title } = Astro.props;
+---
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>{title}</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      background:
+      radial-gradient(circle at top left, #312e81, transparent 30%),
+      radial-gradient(circle at bottom right, #0f766e, transparent 30%),
+      #020617;
+
+      color:white;
+      min-height:100vh;
+      padding:2rem;
+    }
+
+    .container{
+      max-width:1200px;
+      margin:auto;
+    }
+
+    nav{
+      display:flex;
+      justify-content:center;
+      gap:1rem;
+      margin-bottom:4rem;
+      flex-wrap:wrap;
+    }
+
+    nav a{
+      color:white;
+      text-decoration:none;
+      padding:0.9rem 1.4rem;
+      border-radius:14px;
+
+      background:rgba(255,255,255,0.06);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      backdrop-filter:blur(12px);
+
+      transition:0.3s;
+    }
+
+    nav a:hover{
+      background:#7c3aed;
+      transform:translateY(-3px);
+    }
+
+    .hero{
+      text-align:center;
+      margin-bottom:4rem;
+    }
+
+    .hero-title{
+      font-family:'Orbitron', sans-serif;
+
+      font-size:4.5rem;
+
+      font-weight:700;
+
+      letter-spacing:4px;
+
+      background:linear-gradient(to right,#06b6d4,#8b5cf6,#ec4899);
+
+      -webkit-background-clip:text;
+      -webkit-text-fill-color:transparent;
+
+      margin-bottom:1.5rem;
+    }
+
+    .hero-subtitle{
+      max-width:750px;
+      margin:auto;
+
+      color:#cbd5e1;
+
+      font-size:1.1rem;
+
+      line-height:1.9;
+    }
+
+    .grid{
+      display:grid;
+
+      grid-template-columns:
+      repeat(auto-fit,minmax(280px,1fr));
+
+      gap:2rem;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.06);
+
+      border:1px solid rgba(255,255,255,0.08);
+
+      backdrop-filter:blur(14px);
+
+      border-radius:24px;
+
+      padding:2rem;
+
+      transition:0.4s;
+
+      box-shadow:
+      0 10px 30px rgba(0,0,0,0.4);
+    }
+
+    .card:hover{
+      transform:translateY(-8px);
+
+      border-color:#8b5cf6;
+    }
+
+    h1{
+      font-size:3rem;
+      margin-bottom:1rem;
+      color:white;
+    }
+
+    h2{
+      margin-top:2rem;
+      margin-bottom:1rem;
+      color:#c4b5fd;
+    }
+
+    p{
+      line-height:1.8;
+      color:#d1d5db;
+    }
+
+    ul{
+      margin-top:1rem;
+      padding-left:1.5rem;
+    }
+
+    li{
+      margin-bottom:0.8rem;
+      color:#cbd5e1;
+    }
+
+    pre{
+      background:#0f172a;
+
+      border-radius:18px;
+
+      padding:1rem;
+
+      margin-top:1rem;
+
+      overflow-x:auto;
+
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    code{
+      color:#22d3ee;
+      font-size:1rem;
+    }
+
+    iframe{
+      width:100%;
+      height:450px;
+
+      border:none;
+
+      border-radius:20px;
+
+      margin-top:1rem;
+    }
+
+    .button{
+      display:inline-block;
+
+      margin-top:1.5rem;
+
+      padding:0.9rem 1.5rem;
+
+      background:linear-gradient(
+      to right,
+      #7c3aed,
+      #06b6d4
+      );
+
+      color:white;
+
+      text-decoration:none;
+
+      border-radius:14px;
+
+      transition:0.3s;
+    }
+
+    .button:hover{
+      transform:scale(1.05);
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+
+    <nav>
+      <a href="/">Inicio</a>
+      <a href="/ritmo">Ritmo</a>
+      <a href="/melodia">Melodía</a>
+      <a href="/armonia">Armonía</a>
+    </nav>
+
+    <slot />
+
+  </div>
+
+</body>
+</html>

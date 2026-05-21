@@ -1,0 +1,63 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const concepto = {
+  nombre: 'Armonía',
+
+  descripcion:
+    'Acordes ambientales y atmósferas musicales.',
+
+  patron:
+`$: note("[c3,e3,g3] [a3,c4,e4]")
+.sound("pad")
+.slow(4)
+.room(.8)
+.delay(.4)
+.gain(1.1)`,
+
+  notas: [
+    'Los corchetes permiten notas simultáneas.',
+    'El acorde principal es Do mayor.',
+    'La armonía agrega profundidad musical.',
+    'El sonido pad crea ambiente espacial.'
+  ]
+};
+
+const iframeUrl =
+`https://strudel.cc/?embed=1&code=${encodeURIComponent(concepto.patron)}`;
+---
+
+<Layout title={concepto.nombre}>
+
+  <div class="card">
+
+    <h1>{concepto.nombre}</h1>
+
+    <p>{concepto.descripcion}</p>
+
+    <h2>Patrón cargado</h2>
+
+    <pre>
+      <code>{concepto.patron}</code>
+    </pre>
+
+    <h2>Descripción del patrón</h2>
+
+    <ul>
+      {concepto.notas.map(n => <li>{n}</li>)}
+    </ul>
+
+    <h2>Editor interactivo</h2>
+
+    <p>
+      Presiona Play para escuchar los acordes ambientales.
+    </p>
+
+    <iframe
+      src={iframeUrl}
+      title="Armonía">
+    </iframe>
+
+  </div>
+
+</Layout>
